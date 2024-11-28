@@ -70,11 +70,16 @@ export default {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        publicPath: './', // Ensures relative paths for GitHub Pages
+        path: path.resolve(__dirname, 'docs'),
+        filename: 'bundle.js',
+        publicPath: './',
     },
     devtool: 'source-map',
     plugins,
     devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'docs'), 
+        },
         open: false,
         server: 'https',
         historyApiFallback: true,
