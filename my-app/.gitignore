@@ -1,23 +1,40 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
+dist
+.idea
+.run
+npm-debug.log
+npm-debug.log.*
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.vscode
+node_modules
+*.swp
+*.un~
+tags
+stats
+dll
+typings
+webdrivers
+*___jb_old___
+*___jb_tmp___
+coverage
+stats.json
+yarn-error.log
+.eslintcache
+jest_0
+get-pip.py
+CypressExamples/
+# removes actual and diff screenshots for cypress tests
+/cypress/snapshots/actual
+/cypress/snapshots/diff
+/cypress/videos
+/cypress/results
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# removes webapck error reports
+/report.*.json
+/reports/**.html
+
+# test report
+test-report.xml
+test-report-**.xml
+
+# Sentry Config File
+.env.sentry-build-plugin

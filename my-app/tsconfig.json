@@ -1,26 +1,45 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+    "baseUrl": "./app/",
+    "jsx": "react-jsx",
+    "module": "esNext",
+    "outDir": "./dist/",
+    "declaration": false,
+    "noEmit": false,
+    "types": [
+      "./types/styled.d.ts",
+      "./types/typings.d.ts"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "target": "es2022",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "strict": true,
+    "esModuleInterop": true
   },
-  "include": [
-    "src"
+  "exclude": [
+    "./node_modules/*",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.ts",
+    "**/*.stories.tsx",
+    "./internals/*",
+    "./dist/*",
+    "**/*.js",
+    "**/*.jsx",
+    "./app/vendor/*",
+    "./dist/**/*",
+    "**/*.config.*"
   ]
 }

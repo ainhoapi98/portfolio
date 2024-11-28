@@ -1,0 +1,49 @@
+.spinner {
+    width: 160px; /* size2000 */
+    height: 160px; /* size2000 */
+    position: relative;
+    border-radius: 50%;
+    animation: rotate360 1s linear infinite;
+    background: conic-gradient(
+            from 180deg at 50% 50%,
+            rgba(255, 255, 255, 0) 0deg,
+            #fff 88.2deg,
+            #125FE3 /* color.icon.active */ 360deg
+    );
+    mask: radial-gradient(farthest-side, #0000 calc(100% - 8px /* size100 */), #fff 0);
+}
+
+@keyframes rotate360 {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 47%;
+
+    /* Adjust size of rounded edge */
+    width: 8px;
+    height: 8px;
+    /* Same as the last color in  gradient */
+    background-color: #125FE3; /* color.icon.active */
+    border-radius: 50%;
+}
+
+
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    width: 100%;
+    height: 100vh;
+    background-color: #F9FAFB; /* color.background.default */
+}

@@ -1,2 +1,0 @@
-# challenges
-Several Coding challenges

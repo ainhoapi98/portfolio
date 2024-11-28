@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "jest",
+      "jest-styled-components",
+      "@testing-library/jest-dom",
+      "jest-fetch-mock"
+    ]
+  },
+  "exclude": [
+    "./node_modules/*",
+    "**/*.stories.ts",
+    "**/*.stories.tsx",
+    "./internals/*",
+    "./dist/*",
+    "**/*.js",
+    "**/*.jsx",
+    "./app/vendor/*",
+    "./dist/**/*"
+  ]
+}
