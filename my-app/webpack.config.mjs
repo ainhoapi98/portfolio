@@ -23,7 +23,7 @@ const plugins = [
             {from: 'docs/style.css', to: 'style.css'},
         ],
     }),
-    new FaviconsWebpackPlugin('docs/rainbow.svg'),
+    new FaviconsWebpackPlugin('docs/favicon.svg'),
 ]
 
 
@@ -65,7 +65,7 @@ export default {
     },
     output: {
         path: path.resolve(__dirname, 'docs'),
-        filename: 'bundle.js',
+        filename: '[name].[contenthash].js',
         publicPath: './',
     },
     devtool: 'source-map',
