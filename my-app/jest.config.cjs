@@ -15,7 +15,6 @@ module.exports = {
         '!app/**/*.stories.{js,jsx,ts,tsx}',
         '!app/app.jsx',
         '!app/typescript/**/*.{js,jsx,ts,tsx}',
-        '!app/**/messages.ts',
     ],
     coverageThreshold: {
         global: {

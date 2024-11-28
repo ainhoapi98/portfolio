@@ -2,9 +2,6 @@
   "name": "my-app",
   "version": "0.1.0",
   "description": "My app",
-  "main": "index.tsx",
-  "keywords": [
-  ],
   "author": "apineiro <ainhoa.pineiro@hqrevenue.com>",
   "homepage": "",
   "license": "UNLICENSED",
@@ -24,6 +21,7 @@
   },
   "dependencies": {
     "@floating-ui/react": "^0.26.28",
+    "@fontsource/jetbrains-mono": "^5.1.1",
     "@reduxjs/toolkit": "^2.2.5",
     "@uidotdev/usehooks": "^2.4.1",
     "d3-geo": "^3.1.1",

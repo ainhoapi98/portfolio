@@ -1,10 +1,10 @@
 // Components
-import {Wrapper} from "./styled";
+import {Title, Wrapper} from "./styled";
 
 export default function Header() {
     return (
         <Wrapper>
-            HI
+            <Title>Hello</Title>
         </Wrapper>
     )
 }

@@ -24,7 +24,7 @@ const plugins = [
             {from: 'public/style.css', to: 'style.css'},
         ],
     }),
-    new FaviconsWebpackPlugin('public/favicon.svg'),
+    new FaviconsWebpackPlugin('public/rainbow.svg'),
 ]
 
 

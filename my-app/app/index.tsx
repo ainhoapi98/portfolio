@@ -1,16 +1,19 @@
 import {StrictMode} from 'react'
 import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
 
-// API
 // Global Style
-import GlobalStyle from 'styles'
+import GlobalStyle from './styled'
 
 // CSS
 import 'react-grid-layout/css/styles.css'
 
 // Components
 import ErrorBoundary from 'components/ErrorBoundary'
-import Main from "./containers";
+import Layout from "containers";
+import Homepage from "containers/Pages/Homepage";
+
+// Types
+import {Paths} from "types/routes";
 
 
 export default function App() {
@@ -20,10 +23,19 @@ export default function App() {
                 <GlobalStyle/>
                 <BrowserRouter>
                     <Routes>
-                        <Route path={'/'} element={<Main/>}/>
+                        <Route path={'/'} element={<Layout/>}>
+                            <Route
+                                index={true}
+                                element={<Navigate to={Paths.homepage}/>}
+                            />
+                            <Route
+                                path={Paths.homepage}
+                                element={<Homepage/>}
+                            />
+                        </Route>
                         <Route
                             path={'*'}
-                            element={<Navigate to={'/'}/>}
+                            element={<Navigate to={Paths.homepage}/>}
                         />
                     </Routes>
                 </BrowserRouter>
