@@ -17,7 +17,6 @@ const plugins = [
     new HtmlWebpackPlugin({
         inject: true,
         template: 'docs/index.html',
-        sentry_release_id: packageJson.version,
     }),
     new CopyWebpackPlugin({
         patterns: [
@@ -70,16 +69,11 @@ export default {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        path: path.resolve(__dirname, 'docs'),
-        filename: 'bundle.js',
-        publicPath: './',
+        publicPath: './', // Ensures relative paths for GitHub Pages
     },
     devtool: 'source-map',
     plugins,
     devServer: {
-        static: {
-            directory: path.resolve(__dirname, 'docs'), 
-        },
         open: false,
         server: 'https',
         historyApiFallback: true,

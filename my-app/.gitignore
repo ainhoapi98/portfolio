@@ -21,12 +21,6 @@ yarn-error.log
 .eslintcache
 jest_0
 get-pip.py
-CypressExamples/
-# removes actual and diff screenshots for cypress tests
-/cypress/snapshots/actual
-/cypress/snapshots/diff
-/cypress/videos
-/cypress/results
 
 # removes webapck error reports
 /report.*.json
