@@ -40,12 +40,7 @@ export default {
                 test: /\.(ts|tsx)$/,
                 use: 'ts-loader',
                 exclude: [/node_modules/, /\.d\.ts$/],
-            },
-            {
-                test: /\.svg/,
-                type: 'asset/inline',
-            },
-            {test: /\.geojson$/, type: 'json'},
+            }
         ],
     },
     optimization: {
@@ -69,7 +64,9 @@ export default {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        publicPath: './', // Ensures relative paths for GitHub Pages
+        path: path.resolve(__dirname, 'docs'),
+        filename: 'bundle.js',
+        publicPath: './',
     },
     devtool: 'source-map',
     plugins,
