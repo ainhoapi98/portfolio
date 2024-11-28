@@ -70,11 +70,7 @@ export default {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        filename: '[name].[contenthash].js',
-        chunkFilename: '[name].[contenthash].chunk.js',
-        publicPath: '/',
-        path: path.resolve(__dirname, 'dist'),
-        clean: true,
+        publicPath: './', // Ensures relative paths for GitHub Pages
     },
     devtool: 'source-map',
     plugins,
