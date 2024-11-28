@@ -14,7 +14,9 @@
     "start": "webpack serve --no-client-overlay --color --progress",
     "test": "jest --config=jest.config.cjs",
     "lint": "tsc --noEmit && eslint .",
-    "format": "tsc --noEmit && eslint --fix ."
+    "format": "tsc --noEmit && eslint --fix .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "peerDependencies": {
     "eslint": ">=9.0.0"
@@ -57,6 +59,7 @@
     "dotenv-webpack": "^8.0.1",
     "favicons": "^7.2.0",
     "favicons-webpack-plugin": "^6.0.1",
+    "gh-pages": "^6.2.0",
     "html-webpack-plugin": "^5.6.0",
     "style-loader": "^3.3.4",
     "ts-loader": "^9.5.1",
