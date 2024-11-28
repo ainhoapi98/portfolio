@@ -16,15 +16,15 @@ const __dirname = path.dirname(
 const plugins = [
     new HtmlWebpackPlugin({
         inject: true,
-        template: 'public/index.html',
+        template: 'docs/index.html',
         sentry_release_id: packageJson.version,
     }),
     new CopyWebpackPlugin({
         patterns: [
-            {from: 'public/style.css', to: 'style.css'},
+            {from: 'docs/style.css', to: 'style.css'},
         ],
     }),
-    new FaviconsWebpackPlugin('public/rainbow.svg'),
+    new FaviconsWebpackPlugin('docs/rainbow.svg'),
 ]
 
 
