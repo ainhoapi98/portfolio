@@ -1,5 +1,6 @@
 import {Wrapper} from "./styled";
+import Grid from "components/Grid";
 
 export default function Homepage() {
-    return (<Wrapper>homepage</Wrapper>)
+    return (<Wrapper><Grid/></Wrapper>)
 }
