@@ -41,5 +41,9 @@
     "./app/vendor/*",
     "./dist/**/*",
     "**/*.config.*"
+  ],
+  "include": [
+    "app/**/*",
+    ".storybook/**/*"
   ]
 }

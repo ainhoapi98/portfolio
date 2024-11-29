@@ -64,9 +64,11 @@ export default {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        path: path.resolve(__dirname, 'docs'),
         filename: '[name].[contenthash].js',
-        publicPath: './',
+        chunkFilename: '[name].[contenthash].chunk.js',
+        publicPath: '/',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
     devtool: 'source-map',
     plugins,
