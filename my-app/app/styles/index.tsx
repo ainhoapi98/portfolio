@@ -1,5 +1,5 @@
 import Colors from './colors'
 import Spacing from './spacing'
+import { overflowEllipsis } from './mixins'
 
-
-export {Colors, Spacing}
+export { Colors, Spacing, overflowEllipsis }
