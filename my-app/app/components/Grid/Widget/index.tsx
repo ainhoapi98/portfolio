@@ -1,6 +1,6 @@
 import { WidgetType } from 'types/Widget'
 import ToDoList from 'components/ToDoList'
-import { Item } from 'types/Item'
+import { Item } from 'types/item'
 
 const items: Array<Item> = [
   { id: '1', name: 'Item 1', date: '2024-01-01', isCompleted: false },

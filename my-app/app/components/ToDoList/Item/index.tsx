@@ -1,4 +1,4 @@
-import { Item as ItemI } from 'types/Item'
+import { Item as ItemI } from 'types/item'
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Container, Date, Information, Label, Options, Wrapper } from './styled'
 import Checkbox from 'components/Checkbox'

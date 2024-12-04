@@ -3,14 +3,15 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 import { Content, Header, Wrapper } from './styled'
 import Button from 'components/Button'
-import Dropdown, { Option } from '../Dropdown'
-import { Item as ItemI } from 'types/Item'
+import { Item as ItemI } from 'types/item'
 import Item from './Item'
+import { Option } from 'types'
+import Dropdown from 'components/Dropdown'
 
 const options: Array<Option> = [
-  { id: '1', label: 'Item 1' },
-  { id: '2', label: 'Item 2' },
-  { id: '3', label: 'Item 3' },
+  { value: '1', label: 'item 1' },
+  { value: '2', label: 'item 2' },
+  { value: '3', label: 'item 3' },
 ]
 
 interface Props {
@@ -24,8 +25,12 @@ const ToDoList = ({ items }: Props) => {
 
   const handleChange = () => {}
 
-  const handleEditItem = (itemId: string) => {}
-  const handleDeleteItem = (itemId: string) => {}
+  const handleEditItem = (itemId: string) => {
+    console.info(itemId, 'edit')
+  }
+  const handleDeleteItem = (itemId: string) => {
+    console.info(itemId, 'delete')
+  }
   return (
     <Wrapper>
       <Header>

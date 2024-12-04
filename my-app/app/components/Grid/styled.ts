@@ -19,7 +19,7 @@ export const WidgetWrapper = styled.div`
   flex-grow: 1;
   max-width: 440px;
   position: relative;
-  box-shadow: 10px 10px 4px 0 ${rgba(Colors.background.secondary, 0.8)};
+  box-shadow: 10px 10px 4px 0 ${rgba(Colors.background.primary, 0.8)};
 `
 
 export const DragHandle = styled.div`
@@ -43,7 +43,7 @@ export const Layout = styled(GridLayout)<{ minHeight: number }>`
   padding-top: ${Spacing.size200};
 
   .react-grid-item.react-grid-placeholder {
-    background-color: ${Colors.background.secondary};
+    background-color: ${Colors.background.primary};
     border-radius: 32px;
   }
 `

@@ -11,11 +11,11 @@ export const Wrapper = styled.button<{ size?: number }>`
   align-content: center;
   justify-content: center;
   color: ${Colors.text.inverted};
-  background-color: ${Colors.background.accent};
+  background-color: ${Colors.background.secondary};
   border: none;
 
   &:hover {
-    background-color: ${Colors.background.accentSubtle};
+    background-color: ${Colors.background.secondarySubtle};
   }
 
   & > svg {

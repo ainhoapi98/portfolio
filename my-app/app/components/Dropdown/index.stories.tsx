@@ -14,11 +14,11 @@ export default {
 } as Meta<typeof Dropdown>
 
 const options: Array<Option> = [
-  { id: '1', label: 'Item 1' },
-  { id: '2', label: 'Item 2' },
+  { id: '1', label: 'item 1' },
+  { id: '2', label: 'item 2' },
   {
     id: '3',
-    label: 'Item 3',
+    label: 'item 3',
     renderLabel: () => (
       <>
         <span>Item 3</span> <FontAwesomeIcon icon={faSquareCheck} />
