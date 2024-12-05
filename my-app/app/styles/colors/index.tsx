@@ -22,8 +22,11 @@ const Colors = {
     focus: '#E38775',
     subtle: '#E6E9EF',
   },
-  gray: '#C4BDB9',
-  black: '#000000',
+  neutral: {
+    lightGray: '#C7C7C7',
+    gray: '#C4BDB9',
+    black: '#000000',
+  },
 }
 
 export default Colors

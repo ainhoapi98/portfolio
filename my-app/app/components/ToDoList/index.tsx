@@ -15,7 +15,7 @@ import { setIsOpen } from 'reducers/modals'
 // Types
 import { Modals } from 'types/modals'
 import { Option } from 'types'
-import { Item as ItemI } from 'types/item'
+import useItems from 'hooks/useItems'
 
 const options: Array<Option> = [
   { value: 'All', label: 'All' },
@@ -23,11 +23,9 @@ const options: Array<Option> = [
   { value: 'Completed', label: 'Completed' },
 ]
 
-interface Props {
-  items: Array<ItemI>
-}
+const ToDoList = () => {
+  const { items, editItem, getItemById } = useItems()
 
-const ToDoList = ({ items }: Props) => {
   const handleAdd = () => {
     setIsOpen(true, Modals.ToDoItem)
   }
@@ -39,6 +37,13 @@ const ToDoList = ({ items }: Props) => {
   }
   const handleDeleteItem = (itemId: string) => {
     console.info(itemId, 'delete')
+  }
+
+  const handleComplete = (itemId: string, isCompleted: boolean) => {
+    const item = getItemById(itemId)
+    if (item) {
+      editItem({ ...item, isCompleted })
+    }
   }
   return (
     <Wrapper>
@@ -54,12 +59,13 @@ const ToDoList = ({ items }: Props) => {
         />
       </Header>
       <Content>
-        {items.map(item => (
+        {items.value.map(item => (
           <Item
             key={item.id}
             item={item}
             handleEdit={handleEditItem}
             handleDelete={handleDeleteItem}
+            handleComplete={handleComplete}
           />
         ))}
       </Content>

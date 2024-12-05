@@ -47,7 +47,7 @@ const variants = {
 
     &:active {
       background-color: ${Colors.background.secondaryAccent};
-      box-shadow: 0 2px 4px 0 ${rgba(Colors.black, 0.12)} inset;
+      box-shadow: 0 2px 4px 0 ${rgba(Colors.neutral.black, 0.12)} inset;
       border: none;
     }
 
@@ -75,7 +75,7 @@ const Button = styled.button<Props>`
 
   &:disabled {
     border: 1px solid ${Colors.border.subtle};
-    background-color: ${Colors.gray};
+    background-color: ${Colors.neutral.gray};
     color: ${Colors.text.tertiary};
     cursor: default;
     pointer-events: none;

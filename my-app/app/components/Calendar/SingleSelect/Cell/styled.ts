@@ -31,6 +31,6 @@ export const SingleSelectCell = styled(Cell)<SingleSelectProps>`
     $isInvalid &&
     css`
       pointer-events: none;
-      color: ${Colors.gray};
+      color: ${Colors.neutral.gray};
     `}
 `

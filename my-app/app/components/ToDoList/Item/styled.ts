@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Colors } from 'styles'
 
 export const Wrapper = styled.div`
@@ -32,7 +32,11 @@ export const Information = styled.div`
 `
 
 export const Label = styled.span<{ $isCompleted: boolean }>`
-  text-decoration: line-through;
+  ${({ $isCompleted }) =>
+    $isCompleted &&
+    css`
+      text-decoration: line-through;
+    `}
 `
 
 export const Date = styled.span`

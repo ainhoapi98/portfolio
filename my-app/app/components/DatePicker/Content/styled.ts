@@ -61,7 +61,7 @@ export const TabContainer = styled.div`
 export const Wrapper = styled.div`
   height: fit-content;
   border: 1px solid ${Colors.border.default};
-  box-shadow: 0 0 6px 0 ${rgba(Colors.black, 0.1)};
+  box-shadow: 0 0 6px 0 ${rgba(Colors.neutral.black, 0.1)};
   max-width: fit-content;
   overflow: hidden;
   border-radius: 5px;

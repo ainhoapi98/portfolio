@@ -15,7 +15,7 @@ export const Cell = styled.td<{ $isInMonth?: boolean }>`
     !$isInMonth &&
     css`
       pointer-events: none;
-      color: ${Colors.gray};
+      color: ${Colors.neutral.gray};
     `};
 `
 

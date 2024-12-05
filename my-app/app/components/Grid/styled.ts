@@ -27,7 +27,7 @@ export const WidgetWrapper = styled.div`
 export const DragHandle = styled.div`
   justify-self: start;
   display: flex;
-  color: ${Colors.gray};
+  color: ${Colors.neutral.gray};
   position: relative;
   top: -10px;
   right: 10px;

@@ -8,9 +8,10 @@ interface Props {
   item: ItemI
   handleEdit: (itemId: string) => void
   handleDelete: (itemId: string) => void
+  handleComplete: (itemId: string, isCompleted: boolean) => void
 }
 
-const Item = ({ item, handleEdit, handleDelete }: Props) => {
+const Item = ({ item, handleEdit, handleComplete, handleDelete }: Props) => {
   const onClickEdit = (itemId: string) => () => {
     handleEdit(itemId)
   }
@@ -19,14 +20,14 @@ const Item = ({ item, handleEdit, handleDelete }: Props) => {
     handleDelete(itemId)
   }
 
-  const handleComplete = (completed: boolean) => {
-    console.log(completed)
+  const onComplete = (completed: boolean) => {
+    handleComplete(item.id, completed)
   }
 
   return (
     <Wrapper>
       <Container>
-        <Checkbox checked={item.isCompleted} onChange={handleComplete} />
+        <Checkbox checked={item.isCompleted} onChange={onComplete} />
         <Information>
           <Label $isCompleted={item.isCompleted}>{item.name}</Label>
           <Date>{item.date}</Date>

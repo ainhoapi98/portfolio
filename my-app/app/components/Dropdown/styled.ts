@@ -31,7 +31,7 @@ export const Header = styled.div<{ isOpen: boolean }>`
 `
 
 export const List = styled.ul`
-  border: 1px solid ${Colors.gray};
+  border: 1px solid ${Colors.border.default};
   position: absolute;
   top: 36px;
   z-index: 10;

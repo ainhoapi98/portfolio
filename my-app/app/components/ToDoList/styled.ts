@@ -11,9 +11,10 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: ${Colors.gray};
+  background-color: ${Colors.neutral.lightGray};
   border-radius: 6px;
   padding: 8px;
   gap: 8px;

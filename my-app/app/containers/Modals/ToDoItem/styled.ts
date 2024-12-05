@@ -7,5 +7,5 @@ export const Container = styled.div`
   border: 1px solid ${Colors.border.default};
   border-radius: 8px;
   padding: 8px;
-  box-shadow: 0 0 10px 0 ${rgba(Colors.black, 0.4)};
+  box-shadow: 0 0 10px 0 ${rgba(Colors.neutral.black, 0.4)};
 `

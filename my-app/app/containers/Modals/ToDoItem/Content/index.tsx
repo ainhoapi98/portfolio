@@ -1,8 +1,10 @@
 import { ReferenceType } from '@floating-ui/react'
 import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { v4 } from 'uuid'
+import { ChangeEventHandler, MouseEventHandler, useRef, useState } from 'react'
 
-import { ChangeEventHandler, MouseEventHandler, useRef, useState } from 'react' // Components
+// Components
 import Button from 'components/Button'
 import TextInput from 'components/TextInput'
 
@@ -15,6 +17,7 @@ import { PopoverType } from 'types/popovers'
 
 // Hooks
 import usePopoversContext from 'hooks/usePopoversContext'
+import useItems from 'hooks/useItems'
 
 import { Container, Footer, Label, SelectDate, Title, Wrapper } from './styled'
 
@@ -23,6 +26,7 @@ interface Props {
 }
 
 const ToDoItemContent = ({ handleClose }: Props) => {
+  const { addItem } = useItems()
   const inputRef = useRef<HTMLInputElement | null>(null)
   const { refs } = usePopoversContext()
   const params = getParams()
@@ -34,7 +38,7 @@ const ToDoItemContent = ({ handleClose }: Props) => {
   }
 
   const handleSave = () => {
-    console.log('save')
+    addItem({ id: v4(), name, date: date!, isCompleted: false })
     handleClose()
   }
 
