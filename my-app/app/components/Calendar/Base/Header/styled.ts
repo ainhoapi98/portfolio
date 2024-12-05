@@ -16,7 +16,8 @@ export const LabelMonth = styled.span`
 
 export const NavigationContainer = styled.div<{ $positionEnd: boolean }>`
   display: flex;
-  width: 240px;
+  gap: 8px;
+  //width: 240px;
   align-items: center;
   justify-content: ${({ $positionEnd }) =>
     $positionEnd ? 'end' : 'space-between'};

@@ -5,7 +5,7 @@ import {Context, Props} from '../index'
 import {isDateWithinRange} from 'components/Calendar/utils'
 
 // Types
-import {SimpleSelection} from 'components/Calendar/types'
+import {SimpleSelection} from 'types/dates'
 
 /**
  * Context that controls the single-date selection "rules".

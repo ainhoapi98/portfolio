@@ -1,5 +1,5 @@
 import { createContext, ElementType } from 'react'
-import { Position, Selection } from 'components/Calendar/types'
+import { Position, Selection } from 'types/dates'
 import { ConfigType } from 'dayjs'
 
 export interface ContextProps {

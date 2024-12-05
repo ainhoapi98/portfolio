@@ -7,7 +7,7 @@ import {
 } from 'react'
 
 // Types
-import { QuickOption } from 'components/DatePicker/types'
+import { QuickOption } from 'types/dates'
 
 // Context
 import { Context } from 'components/DatePicker/Context'

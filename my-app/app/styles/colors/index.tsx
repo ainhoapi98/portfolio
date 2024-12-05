@@ -14,6 +14,7 @@ const Colors = {
     accent: '#31579D',
     subtle: '#A8B0BD',
     focus: '#E38775',
+    tertiary: '#716D6A',
   },
   border: {
     active: '#4372C9',

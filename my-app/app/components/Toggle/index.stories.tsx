@@ -1,8 +1,8 @@
-import { StoryFn, Meta } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import Toggle from './index'
 
 export default {
-  title: 'inputs/Toggle',
+  title: 'components/Toggle',
   component: Toggle,
   args: {
     isChecked: true,

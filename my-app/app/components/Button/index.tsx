@@ -20,13 +20,14 @@ const variants = {
 
     &:focus {
       color: ${Colors.text.focus} !important;
-      border: 2px solid ${Colors.border.active};
+      border: 2px solid ${Colors.border.focus};
       background-color: ${Colors.background.primarySubtle};
     }
 
     &:active {
       background-color: ${Colors.background.primaryAccent};
       border: 2px solid ${Colors.border.focus};
+      font-weight: bold;
       color: ${Colors.text.inverted};
 
       & > svg {
@@ -52,7 +53,7 @@ const variants = {
 
     &:focus {
       border: 2px solid ${Colors.border.active};
-      background-color: ${Colors.background.inverted};
+      background-color: ${Colors.background.secondarySubtle};
     }
   `,
 }
@@ -74,8 +75,8 @@ const Button = styled.button<Props>`
 
   &:disabled {
     border: 1px solid ${Colors.border.subtle};
-    background-color: ${Colors.background.primarySubtle};
-    color: ${Colors.text.subtle};
+    background-color: ${Colors.gray};
+    color: ${Colors.text.tertiary};
     cursor: default;
     pointer-events: none;
   }

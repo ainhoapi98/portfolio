@@ -15,7 +15,7 @@ export default {
   component: ToDoList,
   args: {},
   parameters: {},
-  decorators: [Story => withSize(Story, 80, 400)],
+  decorators: [Story => withSize(Story, 4000, 400)],
 } as Meta<typeof ToDoList>
 
 const Template: StoryFn<typeof ToDoList> = args => <ToDoList items={items} />

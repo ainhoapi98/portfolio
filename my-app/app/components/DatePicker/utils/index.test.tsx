@@ -2,7 +2,7 @@ import {
   areRangesEqual,
   getQuickValue,
   isRangeSet,
-} from 'elements/DatePicker/utils/index'
+} from 'components/DatePicker/utils/index'
 import { QuickOption } from 'elements/DatePicker/types'
 import { expect } from '@storybook/test'
 

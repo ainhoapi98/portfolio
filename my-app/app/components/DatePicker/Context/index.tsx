@@ -1,12 +1,9 @@
-import { createContext, PropsWithChildren } from 'react'
-// Types
-import { QuickOption } from 'components/DatePicker/types'
-import { RangeSelection } from 'components/Calendar/types'
+import { createContext, PropsWithChildren } from 'react' // Types
+import { QuickOption, RangeSelection } from 'types/dates'
 
 export interface ContextProps {
   value: RangeSelection
   changeValue: (value: RangeSelection) => void
-  isComparisonEnabled?: boolean
   format: string
   options: Array<QuickOption>
   handleOptionRename: (optionId: string, newName: string) => void
@@ -33,7 +30,6 @@ interface Props {
   handleOptionRename: (optionId: string, newName: string) => void
   handleOptionDelete: (optionId: string) => void
   dateFormat?: string
-  isComparisonEnabled?: boolean
   onNavigateMonth?: (month: string, isPrev?: boolean) => void
   maxOptions?: number
 }

@@ -5,7 +5,7 @@ import DatePickerContent, { Props } from './index'
 
 // Context
 import DateSelectContextProvider from '../Context'
-import { QuickOption, TabOptions } from '../types'
+import { QuickOption, TabOptions } from 'types/dates'
 
 export default {
   title: 'components/DatePicker/Content',

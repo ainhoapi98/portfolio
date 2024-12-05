@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Colors } from 'styles'
 
-export const Wrapper = styled.button<{ size?: number }>`
+export const Wrapper = styled.button<{ size?: number; transparent?: boolean }>`
   display: flex;
   cursor: pointer;
   border-radius: 5px;
@@ -14,6 +14,18 @@ export const Wrapper = styled.button<{ size?: number }>`
   background-color: ${Colors.background.secondary};
   border: none;
 
+  ${({ transparent }) =>
+    transparent &&
+    css`
+      background-color: transparent;
+      color: ${Colors.text.primary};
+
+      &:hover {
+        & > svg {
+          color: ${Colors.text.inverted};
+        }
+      }
+    `}
   &:hover {
     background-color: ${Colors.background.secondarySubtle};
   }

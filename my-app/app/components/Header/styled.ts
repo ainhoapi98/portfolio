@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Colors } from 'styles'
+import { rgba } from 'polished'
 
 export const Wrapper = styled.div`
   margin: 0;
@@ -9,6 +10,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${Colors.background.primary};
+  box-shadow: 0 0 10px 0 ${rgba(Colors.black, 0.6)};
 `
 
 export const Title = styled.span`

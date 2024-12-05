@@ -1,12 +1,6 @@
-import { useContext, useState } from 'react'
-
-// Types
-import { QuickOption } from 'components/DatePicker/types'
-
-// Styles
-import { NoOptionsLabel, OptionContainer, Wrapper } from './styled'
-
-// Context
+import { useContext, useState } from 'react' // Types
+import { QuickOption } from 'types/dates' // Styles
+import { NoOptionsLabel, OptionContainer, Wrapper } from './styled' // Context
 import { Context } from 'components/DatePicker/Context'
 import { getQuickValue } from 'components/DatePicker/utils'
 

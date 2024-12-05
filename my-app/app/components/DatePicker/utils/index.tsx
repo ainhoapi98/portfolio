@@ -1,6 +1,5 @@
 // Types
-import {QuickOption} from 'components/DatePicker/types'
-import {RangeSelection} from 'components/Calendar/types'
+import {QuickOption, RangeSelection} from 'types/dates'
 
 /**
  * Returns the id of the matching Quick Option. undefined if none match

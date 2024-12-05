@@ -7,7 +7,7 @@ import {
 } from 'components/Calendar/SingleSelect/Cell/styled'
 
 // Types
-import { Position } from 'components/Calendar/types'
+import { Position } from 'types/dates'
 import { Colors, Spacing } from 'styles'
 
 export interface RangeSelectProps extends SingleSelectProps {

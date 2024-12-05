@@ -6,6 +6,6 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     color: ${Colors.text.primary}
-    padding: 0 ${Spacing.size50};
+    padding: 0 ${Spacing.size200};
     gap: ${Spacing.size50};
 `

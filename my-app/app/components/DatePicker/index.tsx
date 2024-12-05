@@ -1,16 +1,9 @@
-import { ReactNode, useState } from 'react'
-
-// Components
+import { ReactNode, useState } from 'react' // Components
 import DateSelectContextProvider from 'components/DatePicker/Context'
 import Header from './Header'
-import DatePickerContent from 'components/DatePicker/Content'
-
-// Types
-import { QuickOption, TabOptions } from 'components/DatePicker/types'
-
-// Styles
+import DatePickerContent from 'components/DatePicker/Content' // Types
+import { QuickOption, RangeSelection, TabOptions } from 'types/dates' // Styles
 import { Container, PopoverWrapper } from './styled'
-import { RangeSelection } from 'components/Calendar/types'
 
 export interface Props {
   value: RangeSelection

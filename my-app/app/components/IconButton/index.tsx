@@ -6,13 +6,27 @@ import { MouseEventHandler } from 'react'
 interface Props {
   onClick: MouseEventHandler<HTMLButtonElement>
   icon: IconProp
+  transparent?: boolean
   size?: number
   disabled?: boolean
 }
 
-const IconButton = ({ onClick, size, icon, disabled, ...rest }: Props) => {
+const IconButton = ({
+  onClick,
+  size,
+  icon,
+  disabled,
+  transparent,
+  ...rest
+}: Props) => {
   return (
-    <Wrapper onClick={onClick} size={size} disabled={disabled} {...rest}>
+    <Wrapper
+      onClick={onClick}
+      size={size}
+      disabled={disabled}
+      transparent={transparent}
+      {...rest}
+    >
       <FontAwesomeIcon icon={icon} />
     </Wrapper>
   )

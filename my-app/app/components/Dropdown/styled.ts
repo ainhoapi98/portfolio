@@ -2,12 +2,11 @@ import styled, { css } from 'styled-components'
 import { Colors, overflowEllipsis } from 'styles'
 
 export const Container = styled.div`
-  width: 104px;
   position: relative;
 `
 
 export const Header = styled.div<{ isOpen: boolean }>`
-  padding: 0 16px;
+  padding: 0 20px;
   cursor: pointer;
   height: 32px;
   color: ${Colors.text.inverted};
@@ -34,10 +33,10 @@ export const Header = styled.div<{ isOpen: boolean }>`
 export const List = styled.ul`
   border: 1px solid ${Colors.gray};
   position: absolute;
-  top: 40px;
+  top: 36px;
   z-index: 10;
   list-style-type: none;
-  padding: 16px 4px;
+  padding: 4px;
   border-radius: 5px;
   background-color: ${Colors.background.inverted};
   color: ${Colors.text.primary};

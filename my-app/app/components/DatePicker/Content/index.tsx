@@ -1,8 +1,7 @@
 import { useContext, useState } from 'react'
 
 // Types
-import { TabOptions } from 'components/DatePicker/types'
-import { RangeSelection } from 'components/Calendar/types'
+import { RangeSelection, TabOptions } from 'types/dates'
 
 // Context
 import { Context } from 'components/DatePicker/Context'

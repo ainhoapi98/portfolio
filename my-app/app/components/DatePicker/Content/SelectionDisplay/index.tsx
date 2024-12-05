@@ -7,7 +7,7 @@ import { DateContainer, RangeDisplay, Wrapper } from './styled'
 import { Context } from 'components/DatePicker/Context'
 
 // Types
-import { RangeSelection } from 'components/Calendar/types'
+import { RangeSelection } from 'types/dates'
 
 export interface Props {
   range: RangeSelection

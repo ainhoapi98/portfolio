@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { Colors, Spacing } from 'styles'
 import { rgba } from 'polished'
 
-const Tab = styled.div<{ $isSelected?: boolean }>`
+const Tab = styled.div<{ $isSelected?: boolean; $isDisabled?: boolean }>`
   cursor: pointer;
   border-radius: 0;
   display: flex;

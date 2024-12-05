@@ -1,17 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
+// Styles
 import { Content, Header, Wrapper } from './styled'
-import Button from 'components/Button'
-import { Item as ItemI } from 'types/item'
-import Item from './Item'
-import { Option } from 'types'
+
+// Components
 import Dropdown from 'components/Dropdown'
+import Item from './Item'
+import Button from 'components/Button'
+
+// Reducers
+import { setIsOpen } from 'reducers/modals'
+
+// Types
+import { Modals } from 'types/modals'
+import { Option } from 'types'
+import { Item as ItemI } from 'types/item'
 
 const options: Array<Option> = [
-  { value: '1', label: 'item 1' },
-  { value: '2', label: 'item 2' },
-  { value: '3', label: 'item 3' },
+  { value: 'All', label: 'All' },
+  { value: 'Pending', label: 'Pending' },
+  { value: 'Completed', label: 'Completed' },
 ]
 
 interface Props {
@@ -20,7 +29,7 @@ interface Props {
 
 const ToDoList = ({ items }: Props) => {
   const handleAdd = () => {
-    console.info('task added')
+    setIsOpen(true, Modals.ToDoItem)
   }
 
   const handleChange = () => {}

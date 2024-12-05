@@ -1,8 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react'
 import { useState } from 'react'
+
 // Components
 import DatePicker, { DatePickerProps as Props } from './index'
-import { QuickOption, TabOptions } from './types'
+import { QuickOption, TabOptions } from 'types/dates'
 
 const StatefullVersion = (props: Props) => {
   const [selectedValue, setSelectedValue] = useState(props.value)
@@ -12,7 +13,7 @@ const StatefullVersion = (props: Props) => {
 }
 
 export default {
-  title: 'elements/DatePicker',
+  title: 'components/DatePicker',
   component: StatefullVersion,
   args: {
     selectRangeLabel: <span>Select Range</span>,

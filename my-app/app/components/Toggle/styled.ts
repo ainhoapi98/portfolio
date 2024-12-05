@@ -16,15 +16,15 @@ export const Wrapper = styled.div<{ $isDisabled?: boolean }>`
       color: ${Colors.text.subtle};
 
       ${ToggleWrapper} {
-        background-color: ${Colors.background.secondary};
+        background-color: ${Colors.background.primarySubtle};
         pointer-events: none;
       }
     `}
 `
 
 export const Circle = styled.span`
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background-color: ${Colors.background.inverted};
   transition: background-color 0.2s;
@@ -37,11 +37,11 @@ export const ToggleWrapper = styled.div<{
 }>`
   display: flex;
   width: 32px;
-  height: 32px;
+  height: 16px;
   padding: ${Spacing.size25};
   gap: ${Spacing.size50};
   border-radius: 8px;
-  background-color: ${Colors.background.secondary};
+  background-color: ${Colors.background.primary};
   justify-content: center;
   align-items: flex-start;
   cursor: pointer;
@@ -51,7 +51,7 @@ export const ToggleWrapper = styled.div<{
   ${({ $isChecked }) =>
     $isChecked &&
     css`
-      background-color: ${Colors.background.secondarySubtle};
+      background-color: ${Colors.background.primaryAccent};
       justify-content: flex-end;
       align-items: flex-end;
 

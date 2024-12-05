@@ -13,16 +13,18 @@ export const SingleSelectCell = styled(Cell)<SingleSelectProps>`
   border: 1px solid transparent;
 
   &:hover {
-    background-color: ${Colors.background.secondarySubtle};
+    background-color: ${Colors.background.primarySubtle};
   }
 
   ${({ $isSelected, $isInMonth }) =>
     $isSelected &&
     $isInMonth &&
     css`
-      background-color: ${Colors.background.secondarySubtle};
+      background-color: ${Colors.background.primary};
+      color: ${Colors.text.inverted};
       font-weight: bold;
       border: 1px solid ${Colors.border.focus};
+      border-radius: 4px;
     `}
 
   ${({ $isInvalid }) =>

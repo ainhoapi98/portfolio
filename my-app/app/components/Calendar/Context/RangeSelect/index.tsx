@@ -8,7 +8,7 @@ import { isDateWithinRange } from 'components/Calendar/utils'
 import { Context, Props } from 'components/Calendar/Context'
 
 // Types
-import { Position, RangeSelection } from 'components/Calendar/types'
+import { Position, RangeSelection } from 'types/dates'
 
 dayjs.extend(isSameOrAfter)
 

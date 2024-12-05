@@ -7,7 +7,7 @@ import Cell from './Cell'
 import RangeSelectContext, {
   ContextProps,
 } from 'components/Calendar/Context/RangeSelect'
-import { RangeSelection } from 'components/Calendar/types'
+import { RangeSelection } from 'types/dates'
 
 export interface Props {
   value: RangeSelection
