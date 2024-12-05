@@ -6,5 +6,11 @@ export enum Modals {
 export interface Modal {
   isOpen: boolean
   modal: Modals
-  params?: unknown
+  params?: ToDoItemParams
+}
+
+export interface ToDoItemParams {
+  id: string
+  name: string
+  date: string
 }

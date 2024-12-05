@@ -1,12 +1,20 @@
 import { ReferenceType } from '@floating-ui/react'
 import { faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { ChangeEventHandler, MouseEventHandler, useRef, useState } from 'react' // Components
 import Button from 'components/Button'
-import TextInput from 'components/TextInput' // Reducers
-import { setIsOpen } from 'reducers/popovers' // Types
-import { PopoverType } from 'types/popovers' // Hooks
+import TextInput from 'components/TextInput'
+
+// Reducers
+import { getParams } from 'reducers/modals'
+import { setIsOpen } from 'reducers/popovers'
+
+// Types
+import { PopoverType } from 'types/popovers'
+
+// Hooks
 import usePopoversContext from 'hooks/usePopoversContext'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Container, Footer, Label, SelectDate, Title, Wrapper } from './styled'
 
@@ -17,8 +25,9 @@ interface Props {
 const ToDoItemContent = ({ handleClose }: Props) => {
   const inputRef = useRef<HTMLInputElement | null>(null)
   const { refs } = usePopoversContext()
-  const [name, setName] = useState<string>('')
-  const [date, setDate] = useState<string | null>(null)
+  const params = getParams()
+  const [name, setName] = useState<string>(params?.name || '')
+  const [date, setDate] = useState<string | null>(params?.date || null)
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
     setName(e.target.value)
