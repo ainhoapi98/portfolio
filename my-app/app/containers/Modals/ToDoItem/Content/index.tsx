@@ -9,7 +9,7 @@ import Button from 'components/Button'
 import TextInput from 'components/TextInput'
 
 // Reducers
-import { getParams } from 'reducers/modals'
+import { getItem } from 'reducers/modals'
 import { setIsOpen } from 'reducers/popovers'
 
 // Types
@@ -26,19 +26,36 @@ interface Props {
 }
 
 const ToDoItemContent = ({ handleClose }: Props) => {
-  const { addItem } = useItems()
+  const { addItem, editItem } = useItems()
   const inputRef = useRef<HTMLInputElement | null>(null)
   const { refs } = usePopoversContext()
-  const params = getParams()
-  const [name, setName] = useState<string>(params?.name || '')
-  const [date, setDate] = useState<string | null>(params?.date || null)
+  const item = getItem()
+  const isEdit = item !== undefined
+  const [name, setName] = useState<string>(item?.name || '')
+  const [date, setDate] = useState<string | null>(item?.date || null)
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
     setName(e.target.value)
   }
 
   const handleSave = () => {
-    addItem({ id: v4(), name, date: date!, isCompleted: false })
+    const id = item?.id || v4()
+
+    if (isEdit) {
+      editItem({
+        id: item?.id,
+        name,
+        date: date!,
+        isCompleted: item?.isCompleted,
+      })
+    } else {
+      addItem({
+        id,
+        name,
+        date: date!,
+        isCompleted: false,
+      })
+    }
     handleClose()
   }
 
@@ -53,7 +70,7 @@ const ToDoItemContent = ({ handleClose }: Props) => {
 
   return (
     <Container>
-      <Title>Create a new item</Title>
+      <Title>{isEdit ? 'Edit current task' : 'Create a new task'}</Title>
       <Wrapper>
         <Label>Name</Label>
         <TextInput

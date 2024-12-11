@@ -11,6 +11,7 @@ import { PopoverType } from 'types/popovers'
 
 // Components
 import Calendar from './Calendar'
+import Alert from './Alert'
 
 // Styles
 import { Overlay } from './styled'
@@ -30,6 +31,8 @@ const Popover = () => {
             switch (getPopover().value.type) {
               case PopoverType.Calendar:
                 return <Calendar />
+              case PopoverType.Alert:
+                return <Alert />
               default:
                 return <></>
             }

@@ -1,42 +1,47 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-
-// Styles
-import { Content, Header, Wrapper } from './styled'
-
-// Components
+import { faPlus } from '@fortawesome/free-solid-svg-icons' // Styles
+import { Content, Header, Wrapper } from './styled' // Components
 import Dropdown from 'components/Dropdown'
 import Item from './Item'
-import Button from 'components/Button'
-
-// Reducers
+import Button from 'components/Button' // Reducers
 import { setIsOpen } from 'reducers/modals'
-
-// Types
+import { setIsOpen as setPopoverOpen } from 'reducers/popovers' // Types
 import { Modals } from 'types/modals'
+import useItems, { Filter } from 'hooks/useItems'
+import { PopoverType } from 'types/popovers'
 import { Option } from 'types'
-import useItems from 'hooks/useItems'
 
 const options: Array<Option> = [
-  { value: 'All', label: 'All' },
-  { value: 'Pending', label: 'Pending' },
-  { value: 'Completed', label: 'Completed' },
+  { value: Filter.All, label: 'All' },
+  { value: Filter.Pending, label: 'Pending' },
+  { value: Filter.Completed, label: 'Completed' },
 ]
 
 const ToDoList = () => {
-  const { items, editItem, getItemById } = useItems()
+  const {
+    editItem,
+    getItemById,
+    handleFilterChange,
+    getFilteredItems,
+    getFilter,
+  } = useItems()
+
+  const items = getFilteredItems()
 
   const handleAdd = () => {
     setIsOpen(true, Modals.ToDoItem)
   }
 
-  const handleChange = () => {}
+  const handleChange = value => {
+    console.log(value)
+    handleFilterChange(value)
+  }
 
   const handleEditItem = (itemId: string) => {
-    console.info(itemId, 'edit')
+    setIsOpen(true, Modals.ToDoItem, { item: getItemById(itemId) })
   }
   const handleDeleteItem = (itemId: string) => {
-    console.info(itemId, 'delete')
+    setPopoverOpen(true, PopoverType.Alert, { itemId })
   }
 
   const handleComplete = (itemId: string, isCompleted: boolean) => {
@@ -45,6 +50,7 @@ const ToDoList = () => {
       editItem({ ...item, isCompleted })
     }
   }
+
   return (
     <Wrapper>
       <Header>
@@ -53,13 +59,13 @@ const ToDoList = () => {
         </Button>
         <Dropdown
           options={options}
-          value={null}
+          value={getFilter()}
           label={'Select'}
           onChange={handleChange}
         />
       </Header>
       <Content>
-        {items.value.map(item => (
+        {items.map(item => (
           <Item
             key={item.id}
             item={item}

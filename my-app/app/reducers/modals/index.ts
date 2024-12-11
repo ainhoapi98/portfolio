@@ -1,5 +1,6 @@
 // Types
-import { Modal, Modals, ToDoItemParams } from 'types/modals'
+import { Item } from 'types/item'
+import { Modal, Modals } from 'types/modals'
 
 // Utils
 import { createSignal } from 'utils/signals'
@@ -17,6 +18,10 @@ export function getParams() {
   return modal.value.params
 }
 
+export function getItem() {
+  return modal.value.params?.item
+}
+
 export function isDatePickerOpen() {
   return modal.value.isOpen && modal.peek().modal === Modals.DatePicker
 }
@@ -24,7 +29,7 @@ export function isDatePickerOpen() {
 export function setIsOpen(
   isOpen: boolean,
   modal: Modals,
-  params?: ToDoItemParams,
+  params?: { item?: Item },
 ) {
   setModal({ isOpen, modal, params })
 }

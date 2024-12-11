@@ -1,14 +1,14 @@
 import { createSignal } from 'utils/signals'
 import { Item } from 'types/item'
+import { mockedItems } from 'reducers/items/mockData'
 
-const [items, setItems] = createSignal<Array<Item>>([])
+const [items, setItems] = createSignal<Array<Item>>(mockedItems)
 
 export function getItems() {
   return items
 }
 
 export function addItem(item: Item) {
-  console.log('addItem', item)
   setItems([...items.peek(), item])
 }
 
