@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react'
 import ToDoList from './index'
 import withSize from '../../../.storybook/decorators/withSize'
-import { Item } from '../../types/Item'
+import { Item } from '../../types/item'
 
 const items: Array<Item> = [
   { id: '1', name: 'Item 1', date: '2024-01-01', isCompleted: false },
@@ -15,7 +15,7 @@ export default {
   component: ToDoList,
   args: {},
   parameters: {},
-  decorators: [Story => withSize(Story, 80, 400)],
+  decorators: [Story => withSize(Story, 4000, 400)],
 } as Meta<typeof ToDoList>
 
 const Template: StoryFn<typeof ToDoList> = args => <ToDoList items={items} />

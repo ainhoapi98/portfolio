@@ -1,14 +1,9 @@
 import { Container, Header, List, ListItem } from './styled'
-import { MutableRefObject, ReactNode, useState } from 'react'
+import { MutableRefObject, useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { useOutsideClick } from 'hooks'
-
-export interface Option {
-  id: string
-  label: string
-  renderLabel?: (id: string) => ReactNode
-}
+import { Option } from 'types'
 
 interface Props {
   options: Array<Option>
@@ -17,7 +12,7 @@ interface Props {
   onChange: (id: string | null) => void
 }
 
-const Dropdown = ({ options, value, label }: Props) => {
+const Dropdown = ({ options, value, label, onChange }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selected, setSelected] = useState<string | null>(value)
 
@@ -25,8 +20,13 @@ const Dropdown = ({ options, value, label }: Props) => {
     setIsOpen(!isOpen)
   }
 
-  const handleSelect = (id: string) => () => {
-    setSelected(id)
+  useEffect(() => {
+    onChange(selected)
+  }, [selected])
+
+  const handleSelect = (optionValue: string) => () => {
+    setSelected(optionValue)
+    setIsOpen(false)
   }
 
   const handleClickOutside = () => {
@@ -37,21 +37,25 @@ const Dropdown = ({ options, value, label }: Props) => {
     handleClickOutside,
   ) as MutableRefObject<HTMLDivElement | null>
 
+  const getLabel = () => {
+    return options.find(option => option.value === value)?.value || label
+  }
+
   return (
     <Container ref={ref}>
-      <Header onClick={handleOpen}>
-        <span>{selected || label}</span>
+      <Header onClick={handleOpen} isOpen={isOpen}>
+        <span>{getLabel()}</span>
         <FontAwesomeIcon icon={isOpen ? faCaretUp : faCaretDown} />
       </Header>
       {isOpen && (
         <List>
           {options.map(option => (
             <ListItem
-              onClick={handleSelect(option.id)}
-              $isSelected={option.id === selected}
+              onClick={handleSelect(option.value)}
+              $isSelected={option.value === selected}
             >
               {option.renderLabel ? (
-                option.renderLabel(option.id)
+                option.renderLabel(option.value)
               ) : (
                 <span>{option.label}</span>
               )}

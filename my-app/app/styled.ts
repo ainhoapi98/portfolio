@@ -1,6 +1,5 @@
-import {createGlobalStyle} from 'styled-components'
-import {Colors} from "styles";
-
+import { createGlobalStyle } from 'styled-components'
+import { Colors } from 'styles'
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -14,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: ${Colors.background.default};
+        background-color: ${Colors.background.primarySubtle};
         color: ${Colors.text.primary};
     }
 

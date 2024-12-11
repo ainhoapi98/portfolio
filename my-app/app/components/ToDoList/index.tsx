@@ -1,31 +1,56 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-
-import { Content, Header, Wrapper } from './styled'
-import Button from 'components/Button'
-import Dropdown, { Option } from '../Dropdown'
-import { Item as ItemI } from 'types/Item'
+import { faPlus } from '@fortawesome/free-solid-svg-icons' // Styles
+import { Content, Header, Wrapper } from './styled' // Components
+import Dropdown from 'components/Dropdown'
 import Item from './Item'
+import Button from 'components/Button' // Reducers
+import { setIsOpen } from 'reducers/modals'
+import { setIsOpen as setPopoverOpen } from 'reducers/popovers' // Types
+import { Modals } from 'types/modals'
+import useItems, { Filter } from 'hooks/useItems'
+import { PopoverType } from 'types/popovers'
+import { Option } from 'types'
 
 const options: Array<Option> = [
-  { id: '1', label: 'Item 1' },
-  { id: '2', label: 'Item 2' },
-  { id: '3', label: 'Item 3' },
+  { value: Filter.All, label: 'All' },
+  { value: Filter.Pending, label: 'Pending' },
+  { value: Filter.Completed, label: 'Completed' },
 ]
 
-interface Props {
-  items: Array<ItemI>
-}
+const ToDoList = () => {
+  const {
+    editItem,
+    getItemById,
+    handleFilterChange,
+    getFilteredItems,
+    getFilter,
+  } = useItems()
 
-const ToDoList = ({ items }: Props) => {
+  const items = getFilteredItems()
+
   const handleAdd = () => {
-    console.info('task added')
+    setIsOpen(true, Modals.ToDoItem)
   }
 
-  const handleChange = () => {}
+  const handleChange = value => {
+    console.log(value)
+    handleFilterChange(value)
+  }
 
-  const handleEditItem = (itemId: string) => {}
-  const handleDeleteItem = (itemId: string) => {}
+  const handleEditItem = (itemId: string) => {
+    setIsOpen(true, Modals.ToDoItem, { item: getItemById(itemId) })
+  }
+  const handleDeleteItem = (itemId: string) => {
+    setPopoverOpen(true, PopoverType.Alert, { itemId })
+  }
+
+  const handleComplete = (itemId: string, isCompleted: boolean) => {
+    const item = getItemById(itemId)
+    if (item) {
+      editItem({ ...item, isCompleted })
+    }
+  }
+
   return (
     <Wrapper>
       <Header>
@@ -34,7 +59,7 @@ const ToDoList = ({ items }: Props) => {
         </Button>
         <Dropdown
           options={options}
-          value={null}
+          value={getFilter()}
           label={'Select'}
           onChange={handleChange}
         />
@@ -46,6 +71,7 @@ const ToDoList = ({ items }: Props) => {
             item={item}
             handleEdit={handleEditItem}
             handleDelete={handleDeleteItem}
+            handleComplete={handleComplete}
           />
         ))}
       </Content>

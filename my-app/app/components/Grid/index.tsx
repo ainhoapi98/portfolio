@@ -13,6 +13,7 @@ import {
 } from './styled'
 import { Spacing } from 'styles'
 import Widget from './Widget'
+
 import { WidgetType } from 'types/Widget'
 
 const initialLayout: Array<Layout> = [

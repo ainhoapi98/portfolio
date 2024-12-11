@@ -6,7 +6,7 @@ import { faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons'
 interface Props {
   label?: string
   checked: boolean
-  onChange: (completed: boolean) => boolean
+  onChange: (completed: boolean) => void
 }
 
 const Checkbox = ({ label, checked, onChange }: Props) => {
